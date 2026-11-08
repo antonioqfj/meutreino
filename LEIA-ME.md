@@ -22,3 +22,4 @@ O iOS exige um endereço seguro (HTTPS) para habilitar instalação como app e f
 ## Limite do cronômetro no iPhone
 
 Para o aviso tocar no horário, mantenha o app aberto e a tela ativa. O iOS pode suspender páginas web quando você troca de app ou bloqueia a tela, então o cronômetro não é confiável em segundo plano. O app tenta manter a tela acesa enquanto conta, quando o navegador permite.
+
