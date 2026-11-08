@@ -1,0 +1,11 @@
+{
+  "name": "Meu Treino",
+  "short_name": "Meu Treino",
+  "description": "Treinos semanais e cronômetro de descanso, salvos no aparelho.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#111713",
+  "theme_color": "#111713",
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

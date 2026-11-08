@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111713">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Meu Treino">
+  <title>Meu Treino</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <style>
+    :root{color-scheme:dark;--bg:#111713;--panel:#1b231e;--panel2:#222c25;--line:#303c33;--text:#f3f5f1;--muted:#a1ada3;--green:#b8f36b;--green-dark:#25351b;--red:#ff796b;--radius:18px}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}button,input{font:inherit}button{cursor:pointer;color:inherit} .app{max-width:640px;margin:auto;padding:20px 18px 38px}.top{display:flex;justify-content:space-between;align-items:center;margin:9px 2px 24px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--green);font-weight:750}.top h1{font-size:27px;letter-spacing:-.04em;margin:3px 0}.local{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:7px 10px;border-radius:99px}.days{display:flex;gap:8px;overflow:auto;padding:1px 1px 14px;scrollbar-width:none}.days::-webkit-scrollbar{display:none}.day{flex:0 0 48px;height:56px;background:var(--panel);border:1px solid var(--line);border-radius:15px;color:var(--muted);font-weight:700}.day span{display:block;font-size:11px;font-weight:500;margin-top:3px}.day.active{background:var(--green);border-color:var(--green);color:#15200f}.day.has-workout:after{content:"";display:block;width:4px;height:4px;background:currentColor;border-radius:50%;margin:1px auto -5px}.section-head{display:flex;justify-content:space-between;align-items:center;margin:9px 1px 14px}.section-head h2{font-size:21px;letter-spacing:-.03em;margin:0}.sub{font-size:13px;color:var(--muted);margin-top:3px}.btn{border:0;border-radius:13px;padding:11px 15px;font-weight:750;background:var(--green);color:#17200f}.btn.secondary{background:var(--panel2);border:1px solid var(--line);color:var(--text)}.btn.small{padding:9px 12px;font-size:14px}.list{display:grid;gap:12px}.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px}.card-head{display:flex;justify-content:space-between;gap:12px}.exercise-name{font-size:17px;font-weight:750}.exercise-meta{font-size:13px;color:var(--muted);margin-top:3px}.icon-btn{border:0;background:transparent;color:var(--muted);font-size:20px;padding:0 3px;height:30px}.sets{display:flex;gap:8px;overflow:auto;margin-top:16px}.set{border:1px solid var(--line);background:var(--panel2);min-width:58px;border-radius:13px;padding:8px 9px;color:var(--muted);font-size:11px;text-align:center}.set strong{display:block;font-size:14px;color:var(--text);margin-top:1px}.set.done{background:var(--green-dark);border-color:#506b36;color:var(--green)}.set.done strong{color:var(--green)}.set:active{transform:scale(.96)}.notes{font-size:12px;color:var(--muted);margin-top:12px}.empty{border:1px dashed #465348;border-radius:var(--radius);padding:25px 20px;text-align:center;color:var(--muted)}.empty strong{display:block;color:var(--text);font-size:16px;margin-bottom:5px}.timer{margin-top:22px;background:linear-gradient(145deg,#202b22,#18201a);border:1px solid #344333;border-radius:22px;padding:17px}.timer-head{display:flex;align-items:center;justify-content:space-between}.timer-title{font-weight:750}.timer-label{color:var(--muted);font-size:12px;margin-top:2px}.timer-display{font-size:46px;line-height:1;font-weight:750;letter-spacing:-.06em;font-variant-numeric:tabular-nums;margin:17px 0}.timer-row{display:flex;gap:8px;align-items:center}.timer-input{display:flex;gap:6px;align-items:center;background:#111713;border:1px solid var(--line);border-radius:12px;padding:8px 10px;color:var(--muted);font-size:12px}.timer-input input{background:transparent;border:0;color:var(--text);width:35px;text-align:center;outline:none}.timer-buttons{display:flex;gap:8px;margin-left:auto}.timer-buttons .btn{padding:10px 13px}.hint{font-size:11px;color:var(--muted);margin:11px 2px 0}.progress{height:4px;border-radius:9px;background:#303b32;margin-top:14px;overflow:hidden}.progress i{display:block;height:100%;width:0;background:var(--green);transition:width .3s}.modal-back{position:fixed;inset:0;background:#0009;display:grid;place-items:end center;padding:14px;z-index:4}.modal{width:min(100%,560px);background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:0 12px 50px #0008}.modal h2{margin:0 0 16px;font-size:20px}.field{display:block;color:var(--muted);font-size:13px;margin:12px 0}.field input{display:block;width:100%;margin-top:6px;padding:12px;background:#111713;border:1px solid var(--line);border-radius:12px;color:var(--text);outline:none}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:18px}.hidden{display:none!important}.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom) + 18px);transform:translateX(-50%);background:var(--green);color:#13200e;padding:11px 16px;border-radius:99px;font-weight:750;z-index:6;white-space:nowrap;box-shadow:0 5px 25px #0007}
+    @media(min-width:600px){.app{padding-top:32px}.day{flex-basis:64px;height:62px}}
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header class="top"><div><div class="eyebrow">Seu espaço de treino</div><h1>Meu Treino</h1></div><div class="local">● Salvo no aparelho</div></header>
+    <nav class="days" id="days" aria-label="Dias da semana"></nav>
+    <section>
+      <div class="section-head"><div><h2 id="dayTitle">Segunda-feira</h2><div class="sub" id="summary">Comece montando seu treino</div></div><button class="btn small" id="addBtn">＋ Exercício</button></div>
+      <div class="list" id="exerciseList"></div>
+    </section>
+    <section class="timer" aria-label="Cronômetro de descanso">
+      <div class="timer-head"><div><div class="timer-title">Descanso entre séries</div><div class="timer-label" id="timerLabel">Ajuste o tempo e comece</div></div><button id="soundBtn" class="icon-btn" aria-label="Ativar som">🔊</button></div>
+      <div class="timer-display" id="display">01:30</div>
+      <div class="timer-row"><label class="timer-input"><input id="minutes" type="number" min="0" max="99" value="1" aria-label="Minutos"> min</label><label class="timer-input"><input id="seconds" type="number" min="0" max="59" value="30" aria-label="Segundos"> seg</label><div class="timer-buttons"><button class="btn secondary" id="resetBtn">Zerar</button><button class="btn" id="startBtn">Começar</button></div></div>
+      <div class="progress"><i id="progress"></i></div>
+      <div class="hint">O aviso toca no fim do intervalo. Mantenha o app aberto para o cronômetro continuar.</div>
+    </section>
+  </main>
+  <div id="modalBack" class="modal-back hidden"><form id="exerciseForm" class="modal"><h2 id="formTitle">Novo exercício</h2><label class="field">Nome do exercício<input id="nameInput" maxlength="60" required placeholder="Ex.: Supino reto"></label><div class="grid"><label class="field">Número de séries<input id="setsInput" type="number" min="1" max="30" value="4" required></label><label class="field">Repetições por série<input id="repsInput" type="number" min="1" max="999" value="10" required></label></div><label class="field">Carga ou observação (opcional)<input id="noteInput" maxlength="80" placeholder="Ex.: 20 kg em cada lado"></label><div class="modal-actions"><button type="button" class="btn secondary" id="cancelBtn">Cancelar</button><button class="btn" type="submit">Salvar exercício</button></div></form></div>
+  <div id="toast" class="toast hidden" role="status"></div>
+<script>
+(()=>{
+ const dayNames=['Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado','Domingo'];
+ const dayShort=['SEG','TER','QUA','QUI','SEX','SÁB','DOM'];
+ const today=(new Date().getDay()+6)%7;
+ const key='meu-treino-v1';
+ let data;try{data=JSON.parse(localStorage.getItem(key))||{days:{}}}catch{data={days:{}}}
+ let selected=today,editId=null,timerId=null,remaining=90,total=90,startedAt=0,audio=null,wakeLock=null;
+ const $=id=>document.getElementById(id);
+ const save=()=>localStorage.setItem(key,JSON.stringify(data));
+ const workouts=()=>data.days[selected]||[];
+ function render(){
+  $('days').innerHTML=dayNames.map((n,i)=>`<button class="day ${i===selected?'active':''} ${data.days[i]?.length?'has-workout':''}" data-day="${i}">${dayShort[i]}<span>${['2ª','3ª','4ª','5ª','6ª','Sáb','Dom'][i]}</span></button>`).join('');
+  $('dayTitle').textContent=dayNames[selected];
+  const list=workouts();const done=list.reduce((n,e)=>n+e.done.filter(Boolean).length,0),all=list.reduce((n,e)=>n+e.sets,0);
+  $('summary').textContent=list.length?`${list.length} ${list.length===1?'exercício':'exercícios'} · ${done} de ${all} séries concluídas`:'Monte seu treino para este dia';
+  $('exerciseList').innerHTML=list.length?list.map(e=>`<article class="card"><div class="card-head"><div><div class="exercise-name">${esc(e.name)}</div><div class="exercise-meta">${e.sets} séries × ${e.reps} repetições</div></div><button class="icon-btn edit" data-id="${e.id}" aria-label="Editar exercício">✎</button></div><div class="sets">${Array.from({length:e.sets},(_,i)=>`<button class="set ${e.done[i]?'done':''}" data-id="${e.id}" data-set="${i}">Série ${i+1}<strong>${e.done[i]?'✓ Feita':e.reps+' reps'}</strong></button>`).join('')}</div>${e.note?`<div class="notes">${esc(e.note)}</div>`:''}</article>`).join(''):`<div class="empty"><strong>Nenhum exercício por aqui ainda</strong>Toque em “＋ Exercício” para montar seu treino.</div>`;
+ }
+ function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+ $('days').addEventListener('click',e=>{const b=e.target.closest('[data-day]');if(b){selected=+b.dataset.day;render()}});
+ $('exerciseList').addEventListener('click',e=>{const set=e.target.closest('[data-set]');if(set){const item=workouts().find(x=>x.id===set.dataset.id);if(!item)return;const i=+set.dataset.set;item.done[i]=!item.done[i];save();render();if(item.done[i])toast('Série marcada como feita');return}const edit=e.target.closest('.edit');if(edit)openForm(edit.dataset.id)});
+ function openForm(id){editId=id||null;const item=id?workouts().find(x=>x.id===id):null;$('formTitle').textContent=item?'Editar exercício':'Novo exercício';$('nameInput').value=item?.name||'';$('setsInput').value=item?.sets||4;$('repsInput').value=item?.reps||10;$('noteInput').value=item?.note||'';$('modalBack').classList.remove('hidden');setTimeout(()=>$('nameInput').focus(),100)}
+ $('addBtn').onclick=()=>openForm();$('cancelBtn').onclick=()=> $('modalBack').classList.add('hidden');$('modalBack').addEventListener('click',e=>{if(e.target===$('modalBack'))$('modalBack').classList.add('hidden')});
+ $('exerciseForm').onsubmit=e=>{e.preventDefault();const name=$('nameInput').value.trim(),sets=Math.max(1,Math.min(30,+$('setsInput').value)),reps=Math.max(1,+$('repsInput').value),note=$('noteInput').value.trim();if(!name)return;const list=workouts();if(editId){const x=list.find(x=>x.id===editId);if(x){x.name=name;x.reps=reps;x.note=note;if(sets>x.sets)x.done.push(...Array(sets-x.sets).fill(false));else x.done=x.done.slice(0,sets);x.sets=sets}}else{if(!data.days[selected])data.days[selected]=[];data.days[selected].push({id:crypto.randomUUID?.()||String(Date.now()),name,sets,reps,note,done:Array(sets).fill(false)})}save();$('modalBack').classList.add('hidden');render();toast(editId?'Exercício atualizado':'Exercício adicionado');editId=null};
+ let toastTimer;function toast(s){$('toast').textContent=s;$('toast').classList.remove('hidden');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.add('hidden'),2000)}
+ function setDisplay(sec){const m=Math.floor(sec/60),s=sec%60;$('display').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');$('progress').style.width=(total?((total-sec)/total*100):0)+'%'}
+ function chosenSeconds(){return Math.max(1,(Math.min(99,+$('minutes').value||0)*60)+Math.min(59,+$('seconds').value||0))}
+ function tick(){remaining=Math.max(0,Math.ceil((startedAt+total*1000-Date.now())/1000));setDisplay(remaining);if(remaining<=0)finish()}
+ async function acquireWake(){try{if('wakeLock'in navigator)wakeLock=await navigator.wakeLock.request('screen')}catch{}}
+ function releaseWake(){try{wakeLock?.release()}catch{}wakeLock=null}
+ function start(){if(timerId){clearInterval(timerId);timerId=null;total=Math.max(1,remaining)}else{remaining=chosenSeconds();total=remaining;if(audio?.state==='suspended')audio.resume()}startedAt=Date.now();timerId=setInterval(tick,200);$('startBtn').textContent='Pausar';$('timerLabel').textContent='Intervalo em andamento';acquireWake()}
+ function pause(){if(!timerId)return;clearInterval(timerId);timerId=null;tick();$('startBtn').textContent='Continuar';$('timerLabel').textContent='Intervalo pausado';releaseWake()}
+ function beep(){try{audio=audio||new(window.AudioContext||window.webkitAudioContext)();audio.resume();[0,.22,.44].forEach((d,i)=>{const o=audio.createOscillator(),g=audio.createGain();o.type='sine';o.frequency.value=i===1?880:660;g.gain.setValueAtTime(.001,audio.currentTime+d);g.gain.exponentialRampToValueAtTime(.32,audio.currentTime+d+.02);g.gain.exponentialRampToValueAtTime(.001,audio.currentTime+d+.18);o.connect(g);g.connect(audio.destination);o.start(audio.currentTime+d);o.stop(audio.currentTime+d+.2)})}catch{}}
+ function finish(){clearInterval(timerId);timerId=null;remaining=0;setDisplay(0);$('startBtn').textContent='Começar';$('timerLabel').textContent='Descanso encerrado — bora!';beep();if(navigator.vibrate)navigator.vibrate([180,90,180]);releaseWake();toast('Descanso encerrado!')}
+ $('startBtn').onclick=()=>timerId?pause():start();$('resetBtn').onclick=()=>{clearInterval(timerId);timerId=null;releaseWake();remaining=chosenSeconds();total=remaining;setDisplay(remaining);$('startBtn').textContent='Começar';$('timerLabel').textContent='Ajuste o tempo e comece'};
+ ['minutes','seconds'].forEach(id=>$(id).addEventListener('change',()=>{if(!timerId){remaining=chosenSeconds();total=remaining;setDisplay(remaining)}}));
+ $('soundBtn').onclick=()=>{audio=audio||new(window.AudioContext||window.webkitAudioContext)();audio.resume();const o=audio.createOscillator(),g=audio.createGain();o.frequency.value=660;g.gain.value=.1;o.connect(g);g.connect(audio.destination);o.start();o.stop(audio.currentTime+.12);toast('Som ativado')};document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&timerId){tick();acquireWake()}});
+ render();setDisplay(remaining);
+ if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+})();
+</script>
+</body>
+</html>
